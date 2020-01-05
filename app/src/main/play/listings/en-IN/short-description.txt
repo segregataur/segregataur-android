@@ -1,0 +1,1 @@
+Segregate Junk photos from Family Photos automatically

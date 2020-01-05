@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="@dimen/margin_smaller"
+        android:src="@drawable/ic_app_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_share_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/margin_smaller"
+        android:src="@drawable/ic_share_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/logo"
+        app:layout_constraintEnd_toStartOf="@id/logo"
+        app:layout_constraintTop_toTopOf="@id/logo" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/margin_smaller"
+        android:src="@drawable/ic_help_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/logo"
+        app:layout_constraintStart_toEndOf="@id/logo"
+        app:layout_constraintTop_toTopOf="@id/logo" />
+
+    <TextView
+        android:id="@+id/tv_onboarding"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:lineSpacingExtra="@dimen/margin_smaller"
+        android:paddingStart="@dimen/margin_tiny"
+        android:paddingLeft="@dimen/margin_tiny"
+        android:paddingEnd="@dimen/margin_tiny"
+        android:paddingRight="@dimen/margin_tiny"
+        android:text="@string/greeting"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_options_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_options_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:paddingStart="@dimen/margin_tiny"
+        android:paddingLeft="@dimen/margin_tiny"
+        android:paddingEnd="@dimen/margin_tiny"
+        android:paddingRight="@dimen/margin_tiny"
+        android:text="@string/options_text"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/s_segregation_options"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_onboarding" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/s_segregation_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/b_cta"
+        app:layout_constraintStart_toEndOf="@id/tv_options_label"
+        app:layout_constraintStart_toStartOf="@id/tv_options_label"
+        app:layout_constraintTop_toBottomOf="@id/tv_options_label"
+        tools:listitem="@layout/layout_item_segregation_option" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/b_cta"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_smaller"
+        android:text="@string/segregate"
+        app:layout_constraintBottom_toTopOf="@id/tv_onboarding_hint"
+        app:layout_constraintStart_toStartOf="@id/tv_onboarding"
+        app:layout_constraintTop_toBottomOf="@id/s_segregation_options" />
+
+    <TextView
+        android:id="@+id/tv_onboarding_hint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/margin_tiny"
+        android:paddingLeft="@dimen/margin_tiny"
+        android:paddingEnd="@dimen/margin_tiny"
+        android:paddingRight="@dimen/margin_tiny"
+        android:text="@string/no_delete_hint"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@id/tv_message_display"
+        app:layout_constraintEnd_toEndOf="@id/tv_onboarding"
+        app:layout_constraintStart_toStartOf="@id/tv_onboarding"
+        app:layout_constraintTop_toBottomOf="@id/b_cta" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_classification_junk"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        android:contentDescription="@string/junk"
+        android:paddingStart="@dimen/margin_small"
+        android:paddingEnd="@dimen/margin_small"
+        app:layout_constraintBottom_toTopOf="@id/tv_message_display"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        tools:src="@tools:sample/avatars" />
+
+    <View
+        android:id="@+id/v_junk_scrim"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/gradient_scrim"
+        app:layout_constraintBottom_toBottomOf="@id/rv_classification_junk"
+        app:layout_constraintEnd_toEndOf="@id/rv_classification_junk"
+        app:layout_constraintStart_toStartOf="@id/rv_classification_junk"
+        app:layout_constraintTop_toTopOf="@id/rv_classification_junk" />
+
+    <TextView
+        android:id="@+id/tv_classification_junk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="bottom"
+        android:maxLines="1"
+        android:paddingStart="@dimen/margin_smaller"
+        android:paddingEnd="@dimen/margin_smaller"
+        android:text="@string/junk"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/rv_classification_junk"
+        app:layout_constraintEnd_toStartOf="@id/tv_junk_size"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/rv_classification_junk" />
+
+    <TextView
+        android:id="@+id/tv_junk_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_classification_junk"
+        app:layout_constraintEnd_toEndOf="@id/rv_classification_junk"
+        app:layout_constraintStart_toEndOf="@id/tv_classification_junk"
+        tools:text="0 Mb" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_classification_safe"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#884caf50"
+        android:contentDescription="@string/junk"
+        app:layout_constraintBottom_toTopOf="@id/tv_message_display"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        tools:src="@tools:sample/avatars" />
+
+    <View
+        android:id="@+id/v_safe_scrim"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/gradient_scrim"
+        app:layout_constraintBottom_toBottomOf="@id/rv_classification_safe"
+        app:layout_constraintEnd_toEndOf="@id/rv_classification_safe"
+        app:layout_constraintStart_toStartOf="@id/rv_classification_safe"
+        app:layout_constraintTop_toTopOf="@id/rv_classification_safe" />
+
+    <TextView
+        android:id="@+id/tv_classification_not_junk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="bottom|end"
+        android:maxLines="1"
+        android:paddingStart="@dimen/margin_smaller"
+        android:paddingEnd="@dimen/margin_smaller"
+        android:text="@string/not_junk"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_classification_junk"
+        app:layout_constraintEnd_toEndOf="@id/rv_classification_safe"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="@id/rv_classification_safe" />
+
+    <ProgressBar
+        android:id="@+id/pb_classifying"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:indeterminate="false"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/rv_classification_junk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_message_display"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/margin_small"
+        android:textStyle="italic"
+        android:typeface="serif"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/b_verify"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_classification_safe"
+        tools:text="@string/everything_will_be_sorted" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/b_verify"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_smaller"
+        android:layout_marginTop="@dimen/margin_tiny"
+        android:layout_marginEnd="@dimen/margin_smaller"
+        android:layout_marginBottom="@dimen/margin_smaller"
+        android:text="@string/verify"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_message_display" />
+</androidx.constraintlayout.widget.ConstraintLayout>

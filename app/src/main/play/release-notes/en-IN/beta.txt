@@ -1,0 +1,6 @@
+Major Crash Fixed
+Fixed not working on some devices with SD Cards
+Option to choose what to segregate
+Videos in photos fix
+UI Changes
+Nice little loading spinner

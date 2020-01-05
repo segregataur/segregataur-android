@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Segregataur</string>
+    <string name="junk">Junk</string>
+    <string name="not_junk">Safe</string>
+    <string name="segregate">Segregate</string>
+    <string name="verify">Verify</string>
+    <string name="help_text">Segregataur uses AI to classify your WhatsApp images and Videos into junk and not junk. It will ask you to verify after it is done and then you can delete the files you don\'t need.\nHappy Cleaning!</string>
+    <string name="help_title">What is Segregataur ?</string>
+    <string name="everything_will_be_sorted">\" Everything will be sorted \"</string>
+    <string name="no_delete_hint">Don\'t worry,\nI won\'t delete anything without asking</string>
+    <string name="junk_items_view">Uncheck the photos you want to keep</string>
+    <string name="greeting">Hello there,</string>
+    <string name="options_text">Let\'s segregate your</string>
+</resources>
